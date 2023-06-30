@@ -1,28 +1,29 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HighlightCode />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HighlightCode from "@/components/HighlightCode.vue";
+import watermark from "@/utils/warterMark";
 
 export default {
-  name: 'App',
+  name: "App",
+  data() {
+    return {};
+  },
   components: {
-    HelloWorld
-  }
-}
+    HighlightCode,
+  },
+  mounted() {
+    watermark.set("zpgong");
+  },
+  methods: {},
+};
 </script>
-
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+#app, body, html{
+  /* background-color: hsl(220, 13%, 18%); */
 }
 </style>
